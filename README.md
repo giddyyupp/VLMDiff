@@ -1,21 +1,19 @@
 
+# 📚 VLMDiff: Leveraging Vision-Language Models for Multi-Class Anomaly Detection with Diffusion
+<!-- [Conference/Journal Name], [Year]   -->
 
+[Samet Hicsonmez<sup>#</sup>](https://scholar.google.com/citations?user=biHfDhUAAAAJ&hl),
+[Abd El Rahman Shabayek<sup>#</sup>](https://scholar.google.com/citations?user=185kRdEAAAAJ),
+[Djamila Aouada<sup>#</sup>](https://scholar.google.com/citations?user=WBmJVSkAAAAJ)
 
-# VLMDIFF
-**VLMDiff: Leveraging Vision-Language Models for Multi-Class Anomaly Detection with Diffusion**
+[<sup>#</sup>Interdisciplinary Centre for Security, Reliability, and Trust (SnT), University of Luxembourg](https://www.uni.lu/snt-en/research-groups/cvi2/), 
 
-
-[Samet Hicsonmez<sup>1</sup>](https://scholar.google.com/citations?user=biHfDhUAAAAJ&hl),
-[Abd El Rahman Shabayek<sup>1</sup>](https://scholar.google.com/citations?user=185kRdEAAAAJ),
-[Djamila Aouada<sup>1</sup>](https://scholar.google.com/citations?user=WBmJVSkAAAAJ)
-
-[<sup>1</sup>Interdisciplinary Centre for Security, Reliability, and Trust (SnT), University of Luxembourg](https://www.uni.lu/snt-en/research-groups/cvi2/), 
-
-[[`Paper`](TODO)] 
+[![arXiv](https://img.shields.io/badge/arXiv-PDF-red)](link_to_arxiv) 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 
 
-## Abstract
+## 🧠 Abstract
 Detecting visual anomalies in diverse, multi-class real-world images is a significant challenge. We introduce VLMDiff, a novel unsupervised multi-class visual anomaly detection
 framework. It integrates a Latent Diffusion Model (LDM)
 with a Vision-Language Model (VLM) for enhanced anomaly
@@ -32,19 +30,25 @@ Per-Region-Overlap (PRO) metric by up to 25 points on the
 Real-IAD dataset and 8 points on the COCO-AD dataset, out performing state-of-the-art diffusion-based approaches.
 
 
-## 1. Installation
+## 🖥️ Quick Start
+
+### 1. Clone and Install
+
 
 First create a new conda environment, and install all required packages.
 
 ```
+git clone https://gitlab.com/uniluxembourg/snt/cvi2/open/space/vlmdiff
+cd vlmdiff
+
 conda create -n vlmdiff python=3.10
 conda activate vlmdiff
 conda install pytorch==2.1.0 torchvision==0.16.0 pytorch-cuda=11.8 -c pytorch -c nvidia
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 
-## 2.Dataset
+### 2.Dataset
 
 ### 2.1 Real-IAD
 - **Create the Real-IAD dataset directory**. Download the Real-IAD dataset from [Real-IAD](https://realiad4ad.github.io/Real-IAD/). The Real-IAD dataset directory should be as follows. 
@@ -138,6 +142,7 @@ pip3 install -r requirements.txt
                     |--Anomaly 
                         |-- 000.png        
 ```
+---
 
 ## 3. Finetune the Autoencoders
 - Finetune the Autoencoders first by downloading the pretrained Autoencoders from [kl-f8.zip](https://ommer-lab.com/files/latent-diffusion/kl-f8.zip). Move it to `./models/autoencoders.ckpt`.
@@ -264,7 +269,7 @@ python train.py --resume_path ./models/vlmdiff.ckpt --coco_part 0 --data_set coc
 
 
 ## 7. Test
-We train our models for 100 epochs on Real-IAD and COCO, and 300 epochs on MVTec-AD and VISA datasets.
+We train our models for **100** epochs on Real-IAD and COCO, and **300** epochs on MVTec-AD and VISA datasets.
 The output of the saved checkpoint could be found under `./ckpt_{exp_name}/model_epoch=XXX.ckpt`. 
 
 For evaluation and visualization, run the following:
@@ -288,7 +293,10 @@ The images are saved under `./log_image/, where
 - `xxx-samples.jpg` is the reconstructed image through the autoencoder and diffusion model.
 - `xxx-heatmap.png` is the heatmap of the anomaly score.
 
-### VLMDiff Results
+
+---
+
+## 📊 Results
 |   Dataset    | mAU-ROC<sub>I</sub> | mAP<sub>I</sub> | m*F*1-max<sub>I</sub> | mAU-ROC<sub>P</sub> | mAP<sub>P</sub> | m*F*1-max<sub>P</sub> | mAU-PRO<sub>R</sub> |
 |:-----------:|:-------------------:|:---------------:|:---------------------:|:-------------------:|:---------------:|:---------------------:|:-------------------:|
 |  Real-IAD   |        78.0 | 73.2 | 69.8          |        97.1 | 25.5 | 32.3          |        87.7         |
@@ -296,11 +304,42 @@ The images are saved under `./log_image/, where
 |  MVTec-AD   |        90.6 | 95.7 | 94.2          |        95.9 | 51.8 | 53.6          |        89.4         |
 |    VisA     |        80.9 | 83.9 | 80.7          |        97.0 | 28.3 | 33.6          |        81.0         |
 
+---
 
-## Citation
-If you find this code useful, don't forget to star the repo and cite the paper:
+<!-- ## 📁 Folder Structure
+
 ```
-TODO
+.
+├── data/              # Datasets
+├── ddim_inversion.py  # Generate reconstructions
+├── test.py            # Evaluate the performance
+└── README.md
 ```
-## Acknowledgements
-We thank the great works [DiAD](https://github.com/lewandofskee/DiAD), [LDM](https://github.com/CompVis/latent-diffusion) and [ControlNet](https://github.com/lllyasviel/ControlNet) for providing assistance for our research.
+
+--- -->
+
+## 📜 Citation
+If you find this work useful, please cite:
+```bibtex
+@inproceedings{your2025paper,
+  title={Your Paper Title},
+  author={Your, Name and Coauthor, Name},
+  booktitle={Proceedings of Conference},
+  year={2025}
+}
+```
+
+---
+
+## 🪪 License
+
+This repository is licensed under the Apache License. See the [`LICENSE`](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgements
+This repo builds upon open-source contributions from:
+
+ * [DiAD](https://github.com/lewandofskee/DiAD)
+ * [LDM](https://github.com/CompVis/latent-diffusion) 
+ * [ControlNet](https://github.com/lllyasviel/ControlNet)
