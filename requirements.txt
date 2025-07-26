@@ -1,4 +1,4 @@
-timm==0.8.15dev0 
+timm==0.4.12
 mmselfsup 
 openpyxl 
 imgaug 
