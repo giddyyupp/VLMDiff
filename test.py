@@ -5,8 +5,6 @@ import logging
 
 from PIL import Image
 
-import torchmetrics
-
 from share import *
 
 import pytorch_lightning as pl
@@ -59,11 +57,11 @@ def get_dino_attentions(model, img, patch_size=8, img_size=256, threshold=None):
 
 
 parser = argparse.ArgumentParser(description="VLMDiff")
-parser.add_argument("--resume_path", default='./val_ckpt_coco/epoch=99-step=63499.ckpt')
+parser.add_argument("--resume_path", default='./ckpt_testing_mvtec/model_epoch=000.ckpt')
 parser.add_argument("--coco_part", default=0)
-parser.add_argument("--data_set", default='coco', help="choices are coco|cifar10|cifar100|mvtec|visa|realiad")
-parser.add_argument("--data_path", default='/mnt/isilon/projects/sigcom_cv/shared_datasets/coco')
-parser.add_argument("--exp_name", default='coco_part0_scratch', help='npz files will be saved inside this folder. make it unique please!')
+parser.add_argument("--data_set", default='mvtec', help="choices are coco|cifar10|cifar100|mvtec|visa|realiad")
+parser.add_argument("--data_path", default='/mnt/isilon/shicsonmez/ad/data/mvtec_anomaly_detection')
+parser.add_argument("--exp_name", default='testing_mvtec', help='npz files will be saved inside this folder. make it unique please!')
 parser.add_argument('--run_eval_only', action='store_true', help='runs just the eval part without generating images. concats npz_ header with exp_name param.')
 parser.add_argument('--use_dino', action='store_true', help='use DINO as feature extractor or not, if not set Resnet-50.')
 parser.add_argument("--dino_version", default='v1s8', help="choices are v1s8|v1s16|v1b8|v1b16|v2s14|v1r50")
@@ -229,8 +227,9 @@ if not run_eval_only:
                 file_name = input["filename"][0]
                 mid_path, name = get_dset_from_filename(file_name)
                 
-                # Note: disable loggin images for now.
-                #log_local(images, file_name, log_dir=log_dir)
+                # Note: loggin images: input and reconstruction
+                if args.save_visuals:
+                    log_local(images, file_name, log_dir=log_dir)
                 output_img = images['samples']
 
                 # feature extraction for reconstructed image

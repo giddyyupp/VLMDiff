@@ -21,23 +21,72 @@ This project makes use of third-party libraries, each subject to its respective 
 - Torchvision (0.16.0) - BSD-3 License
   Source: https://github.com/pytorch/vision
 
-- Kornia (0.6.12) - Apache-2.0 License
-  Source: https://kornia.github.io/
+- Einops (0.3.0) - MIT License
+  Source: https://github.com/arogozhnikov/einops
 
+- Albumentations (1.3.0) - MIT License
+  Source: https://github.com/albumentations-team/albumentations
+
+- Omegaconf (2.1.1) - BSD 3-Clause License
+  Source: https://github.com/omry/omegaconf
+
+- Open_clip_torch (2.0.2) - Copyright (c) 2012-2021 Gabriel Ilharco, Mitchell Wortsman, 
+Nicholas Carlini, Rohan Taori, Achal Dave, Vaishaal Shankar, 
+John Miller, Hongseok Namkoong, Hannaneh Hajishirzi, Ali Farhadi, 
+Ludwig Schmidt
+  Source: https://github.com/mlfoundations/open_clip
+
+- safetensors (0.2.7) - Apache-2.0 License
+  Source: https://github.com/huggingface/safetensors
+  
+- scipy (1.9.1) - Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers. All rights reserved.
+  Source: https://github.com/scipy/scipy
+
+- scikit-image (0.20.0) - BSD 3-Clause License
+  Source: https://github.com/scikit-image/scikit-image
+
+- tabulate (0.9.0) - BSD 3-Clause License
+  Source: https://github.com/astanin/python-tabulate
+
+  
 - Pillow (9.4.0) - MIT CMU License
   Source: https://python-pillow.org/
 
 - Scikit-Learn (1.2.2) - BSD (new-BSD) License
   Source: https://scikit-learn.org/stable/
 
-- Matplotlib (3.7.1) - Python Software Foundation (PSF) License
-  Source: https://matplotlib.org/stable/
+- matplotlib (3.7.1) - BSD 3-Clause License
+  Source: https://github.com/matplotlib/matplotlib
 
 - PyTorch Lightning (1.5.0) - Apache-2.0 License
   Source: https://lightning.ai/
 
 - TensorBoard (2.12.0) - Apache-2.0 License
   Source: https://www.tensorflow.org/tensorboard
+
+- tqdm (4.65.0) - MIT License
+  Source: https://github.com/tqdm/tqdm
+
+- Numpy (1.24.1) - Python Software Foundation (PSF) License
+  Source: https://numpy.org/
+
+- Opencv (4.11.0.86) - MIT License
+  Source: github.com/opencv/opencv-python
+
+- transformers (4.19.2) - Apache License Version 2.0
+  Source: https://github.com/huggingface/transformers
+
+- xformers (0.0.18) - Copyright (c) Facebook, Inc. and its affiliates
+  Source: https://github.com/facebookresearch/xformers
+
+- taming-transformers (0.0.1) - Copyright (c) 2020 Patrick Esser and Robin Rombach and Björn Ommer
+  Source: https://github.com/CompVis/taming-transformers
+
+- accelerate (1.24.1) - Apache License Version 2.0
+  Source: https://github.com/huggingface/accelerate
+
+- timm (0.4.12) - Apache License Version 2.0
+  Source: https://github.com/huggingface/pytorch-image-models
 
 Each of these libraries retains its own license and ownership.
 Please refer to the respective repositories for full details.
