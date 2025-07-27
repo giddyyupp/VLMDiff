@@ -126,7 +126,7 @@ class EvalImage:
     def eval_auc(self):
         fpr, tpr, thresholds = metrics.roc_curve(self.masks, self.preds, pos_label=1)
         auc = metrics.auc(fpr, tpr)
-        print(roc_auc_score(self.masks, self.preds))
+        # print(roc_auc_score(self.masks, self.preds))
 
         assert auc == roc_auc_score(self.masks, self.preds)
         if auc < 0.5:

@@ -279,14 +279,14 @@ For evaluation and visualization, run the following:
 python test.py --resume_path ./ckpt_{exp_name}/model_epoch=099.ckpt --coco_part 0 --data_set realiad --data_path /path/to/data/dir/real_iad --exp_name realiad_internvl --use_dino --dino_version v1s8 --start_ind 0 --end_ind 120000 # --save_visuals
 
 
-# COCO: we are using text guidance for testing as well.
+# COCO: we are using text guidance for testing.
 python test.py --resume_path ./ckpt_{exp_name}/model_epoch=099.ckpt --coco_part 0 --data_set realiad --data_path /path/to/data/dir/coco --exp_name coco_part0_internvl --use_captions --caption_model _internvl # --save_visuals
 
 ```
 
 You can explore different commandline arguments in the `test.py`.
 
-The images are saved under `./log_image/, where
+The images are saved under `./log_image_{exp_name}/, where
 - `xxx-input.jpg` is the input image.
 - `xxx-reconstruction.jpg` is the reconstructed image through autoencoder without diffusion model.
 - `xxx-features.jpg` is the feature map of the anomaly score.
