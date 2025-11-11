@@ -10,6 +10,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-PDF-red)](link_to_arxiv) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![HF](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue)](https://huggingface.co/samethi/VLMDiff)
 
 
 
@@ -169,13 +170,13 @@ Then move it to the folder with changed name `./models/mvtec_ae.ckpt`.
 
 | Autoencoder        | Pretrained Model                                                                                 |
 |--------------------|--------------------------------------------------------------------------------------------------|
-| Real-IAD First Stage Autoencoder | [real_iad_fs]() |
-| COCO part0 First Stage Autoencoder | [coco_part0_fs]() |
-| COCO part1 First Stage Autoencoder | [coco_part1_fs]() |
-| COCO part2 First Stage Autoencoder | [coco_part2_fs]() |
-| COCO part3 First Stage Autoencoder | [coco_part3_fs]() |
-| MVTec First Stage Autoencoder | [mvtecad_fs](https://drive.google.com/file/d/1vDfywjGqoWRHMxj-5fifujK29_XyHuCQ/view?usp=sharing) |
-| VisA First Stage Autoencoder  | [visa_fs](https://drive.google.com/file/d/1zycpAbWwIVodwTo0Bh1oK8xKliuTT3ul/view?usp=sharing)    |
+| Real-IAD First Stage Autoencoder | [real_iad_fs](https://huggingface.co/samethi/VLMDiff/resolve/main/auto_encoders/fs_realiad.ckpt?download=true) |
+| COCO part0 First Stage Autoencoder | [coco_part0_fs](https://huggingface.co/samethi/VLMDiff/resolve/main/auto_encoders/fs_coco0.ckpt?download=true) |
+| COCO part1 First Stage Autoencoder | [coco_part1_fs](https://huggingface.co/samethi/VLMDiff/resolve/main/auto_encoders/fs_coco1.ckpt?download=true) |
+| COCO part2 First Stage Autoencoder | [coco_part2_fs](https://huggingface.co/samethi/VLMDiff/resolve/main/auto_encoders/fs_coco2.ckpt?download=true) |
+| COCO part3 First Stage Autoencoder | [coco_part3_fs](https://huggingface.co/samethi/VLMDiff/resolve/main/auto_encoders/fs_coco3.ckpt?download=true) |
+| MVTec First Stage Autoencoder | [mvtecad_fs](https://huggingface.co/samethi/VLMDiff/resolve/main/auto_encoders/fs_mvtecad.ckpt?download=true) |
+| VisA First Stage Autoencoder  | [visa_fs](https://huggingface.co/samethi/VLMDiff/resolve/main/auto_encoders/fs_visa.ckpt?download=true)    |
 
 
 ## 4. Generate Image Descriptions
@@ -246,7 +247,7 @@ python utils/coco_format_converter.py
 
 ## 5. Prepare the Model
 - We use the pre-trianed stable diffusion v1.5, the finetuned autoencoders and the Semantic-Guided Network to build the full needed model for training.
-The stable diffusion v1.5 could be downloaded from ["v1-5-pruned.ckpt"](https://huggingface.co/runwayml/stable-diffusion-v1-5/tree/main). Move it under the folder `./models/v1-5-pruned.ckpt`. 
+The stable diffusion v1.5 could be downloaded from ["v1-5-pruned.ckpt"](https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5/tree/main). Move it under the folder `./models/v1-5-pruned.ckpt`. 
 Then run the code to get the output model `./models/vlmdiff.ckpt`.
 
 ```
