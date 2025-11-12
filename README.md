@@ -327,6 +327,7 @@ If you find this work useful, please cite:
       author={Samet Hicsonmez and Abd El Rahman Shabayek and Djamila Aouada},
       year={2026},
       booktitle={WACV}
+}
 ```
 
 ---
