@@ -322,12 +322,11 @@ The images are saved under `./log_image_{exp_name}/, where
 ## 📜 Citation
 If you find this work useful, please cite:
 ```bibtex
-@inproceedings{your2025paper,
-  title={Your Paper Title},
-  author={Your, Name and Coauthor, Name},
-  booktitle={Proceedings of Conference},
-  year={2025}
-}
+@inproceedings{hicsonmez2025vlmdiff,
+      title={VLMDiff: Leveraging Vision-Language Models for Multi-Class Anomaly Detection with Diffusion}, 
+      author={Samet Hicsonmez and Abd El Rahman Shabayek and Djamila Aouada},
+      year={2026},
+      booktitle={WACV}
 ```
 
 ---
