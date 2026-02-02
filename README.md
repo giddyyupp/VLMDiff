@@ -39,7 +39,7 @@ Real-IAD dataset and 8 points on the COCO-AD dataset, out performing state-of-th
 First create a new conda environment, and install all required packages.
 
 ```
-git clone https://gitlab.com/uniluxembourg/snt/cvi2/open/space/vlmdiff
+git clone https://github.com/giddyyupp/VLMDiff
 cd vlmdiff
 
 conda create -n vlmdiff python=3.10
